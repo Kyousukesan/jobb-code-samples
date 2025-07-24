@@ -1,43 +1,43 @@
-package cn.dotfashion.soa.pim.controller;
+package cn.company.module.controller;
 
 
-import cn.dotfashion.soa.api.vo.Response;
-import cn.dotfashion.soa.api.vo.Result;
-import cn.dotfashion.soa.pdb.vo.resp.AttributeSubmitResp;
-import cn.dotfashion.soa.pim.annotation.UlpAuthorityCheck;
-import cn.dotfashion.soa.pim.api.CategoryAuditTaskApi;
-import cn.dotfashion.soa.pim.entity.ImportTaskEntity;
-import cn.dotfashion.soa.pim.enums.FileImportType;
-import cn.dotfashion.soa.pim.service.AsyncBatchTaskService;
-import cn.dotfashion.soa.pim.service.category.audit.task.CategoryAuditTaskBusinessService;
-import cn.dotfashion.soa.pim.util.HttpRequestTools;
-import cn.dotfashion.soa.pim.util.ResponseTools;
-import cn.dotfashion.soa.pim.vo.categorytask.request.*;
-import cn.dotfashion.soa.pim.vo.categorytask.response.*;
+import cn.company.api.vo.Response;
+import cn.company.api.vo.Result;
+import cn.company.pdb.vo.resp.AttributeSubmitResp;
+import cn.company.module.annotation.UlpAuthorityCheck;
+import cn.company.module.api.CategoryAuditTaskApi;
+import cn.company.module.entity.ImportTaskEntity;
+import cn.company.module.enums.FileImportType;
+import cn.company.module.service.AsyncBatchTaskService;
+import cn.company.module.service.category.audit.task.CategoryAuditTaskBusinessService;
+import cn.company.module.util.HttpRequestTools;
+import cn.company.module.util.ResponseTools;
+import cn.company.module.vo.categorytask.request.*;
+import cn.company.module.vo.categorytask.response.*;
 
-import com.shein.common.util.DistributedLockUtil;
+import com.common.util.DistributedLockUtil;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
 import java.util.List;
 
-import static cn.dotfashion.soa.pim.enums.FileImportType.ASYNC_SUBMIT_CATEGORY_LEVEL_VERSION;
-import static cn.dotfashion.soa.pim.enums.FileImportType.ASYNC_SUBMIT_CATEGORY_TASK_DIFF;
+import static cn.company.module.enums.FileImportType.ASYNC_SUBMIT_CATEGORY_LEVEL_VERSION;
+import static cn.company.module.enums.FileImportType.ASYNC_SUBMIT_CATEGORY_TASK_DIFF;
 
 /**
  * <p>
- * 分类提报任务主表 前端控制器
+ * Category Submission Task Main Controller
  * </p>
  *
  * @author zhoujiwei
  * @since 2023-07-05
  */
 @RestController
-public class CategoryAuditTaskController implements CategoryAuditTaskApi {
+public class CategoryTaskController implements CategoryReviewTaskApi {
 
     @Resource
-    private CategoryAuditTaskBusinessService businessService;
+    private CategoryReviewTaskBusinessService businessService;
 
     @Resource
     private AsyncBatchTaskService asyncBatchTaskService;
@@ -45,8 +45,8 @@ public class CategoryAuditTaskController implements CategoryAuditTaskApi {
     private static final String SUBMIT_CATEGORY_LEVEL_VERSION_INFO_LOCK = "SUBMIT_CATEGORY_LEVEL_VERSION_INFO_LOCK";
 
     @Override
-    public Response<CategoryAuditTaskApplyResp> categoryAuditTaskApply(CategoryAuditTaskApplyReq req) {
-        return Response.buildSuccessInfo(businessService.categoryAuditTaskApply(req));
+    public Response<CategoryReviewTaskApplyResp> categoryReviewTaskApply(CategoryReviewTaskApplyReq req) {
+        return Response.buildSuccessInfo(businessService.categoryReviewTaskApply(req));
     }
 
     @Override
@@ -121,20 +121,20 @@ public class CategoryAuditTaskController implements CategoryAuditTaskApi {
 
     @UlpAuthorityCheck
     @Override
-    public Response saveCategoryAuditReference(CategoryAuditReferenceSaveReq req) {
-        businessService.saveCategoryAuditReference(req);
+    public Response saveCategoryReviewReference(CategoryReviewReferenceSaveReq req) {
+        businessService.saveCategoryReviewReference(req);
         return Response.buildSuccess();
     }
 
     @Override
-    public Response<Result<CategoryAuditReferenceResp>> getCategoryAuditReference(CategoryAuditReferenceReq req) {
-        List<CategoryAuditReferenceResp> respList = businessService.getCategoryAuditReference(req);
+    public Response<Result<CategoryReviewReferenceResp>> getCategoryReviewReference(CategoryReviewReferenceReq req) {
+        List<CategoryReviewReferenceResp> respList = businessService.getCategoryReviewReference(req);
         return Response.buildSuccessResult(respList, respList.size());
     }
 
     @Override
-    public Response<GetCategoryAuditVersionResp> getCategoryAuditVersionList(CategoryAuditReferenceReq req) {
-        return Response.buildSuccessInfo(businessService.getCategoryAuditVersionList(req));
+    public Response<GetCategoryReviewVersionResp> getCategoryReviewVersionList(CategoryReviewReferenceReq req) {
+        return Response.buildSuccessInfo(businessService.getCategoryReviewVersionList(req));
     }
 
     @Override
@@ -143,14 +143,14 @@ public class CategoryAuditTaskController implements CategoryAuditTaskApi {
     }
 
     @Override
-    public Response<Void> categoryTaskAudit(categoryTaskAuditReq req) {
-        businessService.categoryTaskAudit(req);
+    public Response<Void> categoryTaskReview(categoryTaskReviewReq req) {
+        businessService.categoryTaskReview(req);
         return Response.buildSuccess();
     }
 
     @Override
     public Response<Void> taskAfterHandle(Long requestId) {
-        asyncBatchTaskService.asyncBatchTask(requestId, FileImportType.ASYNC_AUDIT_TASK_AFTER_TASK, null, null, null);
+        asyncBatchTaskService.asyncBatchTask(requestId, FileImportType.ASYNC_REVIEW_TASK_AFTER_TASK, null, null, null);
         return Response.buildSuccess();
     }
 
@@ -168,8 +168,8 @@ public class CategoryAuditTaskController implements CategoryAuditTaskApi {
 
     @UlpAuthorityCheck
     @Override
-    public Response<Void> auditCancel(TaskFinalCheckReq req) {
-        businessService.auditCancel(req);
+    public Response<Void> reviewCancel(TaskFinalCheckReq req) {
+        businessService.reviewCancel(req);
         return Response.buildSuccess();
     }
 

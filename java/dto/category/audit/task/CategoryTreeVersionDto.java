@@ -9,7 +9,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import java.util.*;
 
 /**
- * 分类提报任务版本数据表
+ * Category Submission Task Version Data Table
  */
 @Data
 public class CategoryTreeVersionDto {

@@ -1,16 +1,16 @@
-package cn.dotfashion.soa.pim.service.category.audit.task;
+package cn.dotfashion.soa.module.service.category.audit.task;
 
-import cn.dotfashion.soa.pim.dto.category.audit.task.CategoryAuditReferenceDto;
-import cn.dotfashion.soa.pim.entity.CategoryAuditTaskReferenceEntity;
-import cn.dotfashion.soa.pim.vo.categorytask.request.CategoryAuditReferenceSaveReq;
-import cn.dotfashion.soa.pim.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.dotfashion.soa.module.dto.category.audit.task.CategoryAuditReferenceDto;
+import cn.dotfashion.soa.module.entity.CategoryAuditTaskReferenceEntity;
+import cn.dotfashion.soa.module.vo.categorytask.request.CategoryAuditReferenceSaveReq;
+import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 
 /**
  * <p>
- * 分类提报任务版本数据表 服务类
+ * Category Submission Task版本数据表 服务类
  * </p>
  *
  * @author zhoujiwei

@@ -1,7 +1,7 @@
-package cn.dotfashion.soa.pim.dto.category.audit.task;
+package cn.dotfashion.soa.module.dto.category.audit.task;
 
 
-import cn.dotfashion.soa.pim.enums.category.audit.ChangeTagEnum;
+import cn.dotfashion.soa.module.enums.category.audit.ChangeTagEnum;
 import lombok.Data;
 
 import java.util.Date;

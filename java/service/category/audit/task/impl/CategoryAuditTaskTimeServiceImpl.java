@@ -1,12 +1,12 @@
-package cn.dotfashion.soa.pim.service.category.audit.task.impl;
+package cn.dotfashion.soa.module.service.category.audit.task.impl;
 
-import cn.dotfashion.soa.pim.dto.category.audit.task.CategoryTreeVersionDto;
-import cn.dotfashion.soa.pim.entity.CategoryAuditTaskTimeEntity;
-import cn.dotfashion.soa.pim.mapper.CategoryAuditTaskTimeMapper;
-import cn.dotfashion.soa.pim.service.category.audit.task.CategoryAuditTaskTimeService;
-import cn.dotfashion.soa.pim.util.EntityOperateUtils;
-import cn.dotfashion.soa.pim.vo.categorytask.request.SetUpCategoryShowTimeReq;
-import cn.dotfashion.soa.pim.vo.categorytask.response.SetUpCategoryShowTimeResp;
+import cn.dotfashion.soa.module.dto.category.audit.task.CategoryTreeVersionDto;
+import cn.dotfashion.soa.module.entity.CategoryAuditTaskTimeEntity;
+import cn.dotfashion.soa.module.mapper.CategoryAuditTaskTimeMapper;
+import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskTimeService;
+import cn.dotfashion.soa.module.util.EntityOperateUtils;
+import cn.dotfashion.soa.module.vo.categorytask.request.SetUpCategoryShowTimeReq;
+import cn.dotfashion.soa.module.vo.categorytask.response.SetUpCategoryShowTimeResp;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
- * 分类提报任务启用任务 服务实现类
+ * Category Submission Task启用任务 服务实现类
  * </p>
  *
  * @author zhoujiwei

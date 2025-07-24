@@ -1,4 +1,4 @@
-package cn.dotfashion.soa.pim.entity;
+package cn.dotfashion.soa.module.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -20,7 +20,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("pim_category_change_version")
+@TableName("module_category_change_version")
 @ApiModel(value="CategoryChangeVersionEntity对象", description="分类版本外发表")
 public class CategoryChangeVersionEntity implements Serializable {
 

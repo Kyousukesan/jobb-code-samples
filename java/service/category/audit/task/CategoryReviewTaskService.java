@@ -1,15 +1,15 @@
-package cn.dotfashion.soa.pim.service.category.audit.task;
+package cn.dotfashion.soa.module.service.category.audit.task;
 
-import cn.dotfashion.soa.pim.entity.CategoryAuditTaskEntity;
-import cn.dotfashion.soa.pim.enums.category.audit.TaskStateEnum;
-import cn.dotfashion.soa.pim.vo.categorytask.response.TopCategoryInfoResp;
+import cn.dotfashion.soa.module.entity.CategoryAuditTaskEntity;
+import cn.dotfashion.soa.module.enums.category.audit.TaskStateEnum;
+import cn.dotfashion.soa.module.vo.categorytask.response.TopCategoryInfoResp;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 
 /**
  * <p>
- * 分类提报任务主表 服务类
+ * Category Submission Task主表 服务类
  * </p>
  *
  * @author zhoujiwei

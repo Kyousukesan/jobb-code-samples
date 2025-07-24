@@ -1,12 +1,13 @@
-package cn.dotfashion.soa.pim.dto.category.audit.task;
+package java.dto.category.audit.task;
 
-import cn.dotfashion.soa.pim.enums.category.audit.ChangeTagEnum;
-import cn.dotfashion.soa.pim.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.dotfashion.soa.module.enums.category.audit.ChangeTagEnum;
+import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.*;
+import java.dto.category.audit.task.CategoryDiffChangeDto;
 
 /**
  * Category Submission Task Version Data Table

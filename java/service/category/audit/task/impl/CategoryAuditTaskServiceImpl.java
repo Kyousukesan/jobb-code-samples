@@ -1,18 +1,18 @@
-package cn.dotfashion.soa.pim.service.category.audit.task.impl;
+package cn.dotfashion.soa.module.service.category.audit.task.impl;
 
 import cn.dotfashion.soa.api.constant.ErrorCodeDefine;
 import cn.dotfashion.soa.framework.exception.BusinessException;
 import cn.dotfashion.soa.framework.util.DateFormatTools;
-import cn.dotfashion.soa.pim.constant.DocumentConstant;
-import cn.dotfashion.soa.pim.dto.SeqGenerateHolder;
-import cn.dotfashion.soa.pim.entity.CategoryAuditTaskEntity;
-import cn.dotfashion.soa.pim.enums.category.audit.TaskStateEnum;
-import cn.dotfashion.soa.pim.mapper.CategoryAuditTaskMapper;
-import cn.dotfashion.soa.pim.service.SeqAssistantService;
-import cn.dotfashion.soa.pim.service.category.audit.task.CategoryAuditTaskBusinessService;
-import cn.dotfashion.soa.pim.service.category.audit.task.CategoryAuditTaskService;
-import cn.dotfashion.soa.pim.util.UserContextUtil;
-import cn.dotfashion.soa.pim.vo.categorytask.response.TopCategoryInfoResp;
+import cn.dotfashion.soa.module.constant.DocumentConstant;
+import cn.dotfashion.soa.module.dto.SeqGenerateHolder;
+import cn.dotfashion.soa.module.entity.CategoryAuditTaskEntity;
+import cn.dotfashion.soa.module.enums.category.audit.TaskStateEnum;
+import cn.dotfashion.soa.module.mapper.CategoryAuditTaskMapper;
+import cn.dotfashion.soa.module.service.SeqAssistantService;
+import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskBusinessService;
+import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskService;
+import cn.dotfashion.soa.module.util.UserContextUtil;
+import cn.dotfashion.soa.module.vo.categorytask.response.TopCategoryInfoResp;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.shein.common.combine.CombineManager;
 import com.shein.common.exception.BusinessAssert;
@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
- * 分类提报任务主表 服务实现类
+ * Category Submission Task主表 服务实现类
  * </p>
  *
  * @author zhoujiwei

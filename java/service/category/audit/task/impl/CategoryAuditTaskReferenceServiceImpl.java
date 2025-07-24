@@ -1,13 +1,13 @@
-package cn.dotfashion.soa.pim.service.category.audit.task.impl;
+package cn.dotfashion.soa.module.service.category.audit.task.impl;
 
 import cn.dotfashion.soa.framework.util.JsonTools;
-import cn.dotfashion.soa.pim.dto.category.audit.task.CategoryAuditReferenceDto;
-import cn.dotfashion.soa.pim.entity.CategoryAuditTaskReferenceEntity;
-import cn.dotfashion.soa.pim.mapper.CategoryAuditTaskReferenceMapper;
-import cn.dotfashion.soa.pim.service.category.audit.task.CategoryAuditTaskReferenceService;
-import cn.dotfashion.soa.pim.vo.categorytask.request.CategoryAuditReferenceSaveReq;
-import cn.dotfashion.soa.pim.vo.categorytask.request.SubmitCategoryInfoDataReq;
-import cn.dotfashion.soa.pim.vo.request.document.SizeInfoModule;
+import cn.dotfashion.soa.module.dto.category.audit.task.CategoryAuditReferenceDto;
+import cn.dotfashion.soa.module.entity.CategoryAuditTaskReferenceEntity;
+import cn.dotfashion.soa.module.mapper.CategoryAuditTaskReferenceMapper;
+import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskReferenceService;
+import cn.dotfashion.soa.module.vo.categorytask.request.CategoryAuditReferenceSaveReq;
+import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.dotfashion.soa.module.vo.request.document.SizeInfoModule;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.commons.collections4.CollectionUtils;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
- * 分类提报任务版本数据表 服务实现类
+ * Category Submission Task版本数据表 服务实现类
  * </p>
  *
  * @author zhoujiwei

@@ -1,11 +1,11 @@
-package cn.dotfashion.soa.pim.service.category.audit.task.impl;
+package cn.dotfashion.soa.module.service.category.audit.task.impl;
 
 import cn.dotfashion.soa.framework.util.DateFormatTools;
 import cn.dotfashion.soa.framework.util.ExceptionTools;
-import cn.dotfashion.soa.pim.constant.LoggerConstants;
-import cn.dotfashion.soa.pim.enums.category.audit.TaskStateEnum;
-import cn.dotfashion.soa.pim.mq.log.LogCommonUtilService;
-import cn.dotfashion.soa.pim.service.category.audit.task.CategoryAuditTaskLogService;
+import cn.dotfashion.soa.module.constant.LoggerConstants;
+import cn.dotfashion.soa.module.enums.category.audit.TaskStateEnum;
+import cn.dotfashion.soa.module.mq.log.LogCommonUtilService;
+import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskLogService;
 import com.shein.common.enums.LogEnum;
 import com.shein.common.enums.OperationMethodEnum;
 import com.shein.common.logger.entity.OperationLogger;

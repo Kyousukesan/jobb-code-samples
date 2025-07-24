@@ -1,6 +1,6 @@
-package cn.dotfashion.soa.pim.entity;
+package cn.dotfashion.soa.module.entity;
 
-import cn.dotfashion.soa.pim.dto.category.audit.task.CategoryTreeVersionDto;
+import cn.dotfashion.soa.module.dto.category.audit.task.CategoryTreeVersionDto;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 
@@ -17,16 +17,16 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 分类提报任务版本数据表
+ * Category Submission Task版本数据表
  * </p>
  *
- * @author zhangdongdong
+ * @author zhoujiwei
  * @since 2023-07-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("pim_category_audit_task_version")
-@ApiModel(value="CategoryAuditTaskVersionEntity对象", description="分类提报任务版本数据表")
+@TableName("module_category_audit_task_version")
+@ApiModel(value="CategoryAuditTaskVersionEntity对象", description="Category Submission Task版本数据表")
 public class CategoryAuditTaskVersionEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

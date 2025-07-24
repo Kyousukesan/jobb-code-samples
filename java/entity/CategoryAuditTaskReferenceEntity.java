@@ -1,4 +1,4 @@
-package cn.dotfashion.soa.pim.entity;
+package cn.dotfashion.soa.module.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -12,17 +12,17 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 分类提报任务启用任务
+ * Category Submission Task版本数据表
  * </p>
  *
- * @author zhangdongdong
+ * @author zhoujiwei
  * @since 2023-07-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("pim_category_audit_task_time")
-@ApiModel(value="CategoryAuditTaskTimeEntity对象", description="分类提报任务启用任务")
-public class CategoryAuditTaskTimeEntity implements Serializable {
+@TableName("module_category_audit_task_reference")
+@ApiModel(value="CategoryAuditTaskReferenceEntity对象", description="Category Submission Task版本数据表")
+public class CategoryAuditTaskReferenceEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,17 +33,11 @@ public class CategoryAuditTaskTimeEntity implements Serializable {
     @ApiModelProperty(value = "任务主表")
     private Long categoryAuditTaskId;
 
-    @ApiModelProperty(value = "分类唯一标识 父id-备注名")
-    private String categoryKey;
+    @ApiModelProperty(value = "版本号")
+    private Integer version;
 
-    @ApiModelProperty(value = "启用的分类id")
-    private Long categoryId;
-
-    @ApiModelProperty(value = "0未启用1待执行2执行完毕")
-    private Integer taskState;
-
-    @ApiModelProperty(value = "启用时间")
-    private Date enableTime;
+    @ApiModelProperty(value = "关联审批参考数据")
+    private String referenceData;
 
     @ApiModelProperty(value = "记录插入时间")
     private Date insertTime;

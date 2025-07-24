@@ -1,4 +1,4 @@
-package cn.dotfashion.soa.pim.entity;
+package cn.dotfashion.soa.module.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -12,16 +12,16 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 分类提报任务主表
+ * Category Submission Task主表
  * </p>
  *
- * @author zhangdongdong
+ * @author zhoujiwei
  * @since 2023-07-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("pim_category_audit_task")
-@ApiModel(value="CategoryAuditTaskEntity对象", description="分类提报任务主表")
+@TableName("module_category_audit_task")
+@ApiModel(value="CategoryAuditTaskEntity对象", description="Category Submission Task主表")
 public class CategoryAuditTaskEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

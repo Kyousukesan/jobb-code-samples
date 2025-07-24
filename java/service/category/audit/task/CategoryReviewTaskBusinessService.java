@@ -1,10 +1,10 @@
-package cn.dotfashion.soa.pim.service.category.audit.task;
+package cn.dotfashion.soa.module.service.category.audit.task;
 
 import cn.dotfashion.soa.api.vo.Result;
-import cn.dotfashion.soa.pim.entity.CategoryAuditTaskEntity;
-import cn.dotfashion.soa.pim.vo.categorytask.request.*;
-import cn.dotfashion.soa.pim.vo.categorytask.response.*;
-import cn.dotfashion.soa.pim.vo.response.PageResponse;
+import cn.dotfashion.soa.module.entity.CategoryAuditTaskEntity;
+import cn.dotfashion.soa.module.vo.categorytask.request.*;
+import cn.dotfashion.soa.module.vo.categorytask.response.*;
+import cn.dotfashion.soa.module.vo.response.PageResponse;
 
 import java.util.List;
 

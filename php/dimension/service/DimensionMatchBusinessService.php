@@ -27,20 +27,20 @@ class DimensionMatchBusinessService
     public function simpleMatch(int $dimensionId, array $conditionData = [], MatchDataDto $matchDataDto = null): MatchResultDto
     {
         $matchResult = MatchResultDto::init(false);
-        //先构建配置
+        //まず設定を構築
         $matchConfig = !is_null($matchDataDto) ? $matchDataDto : $this->buildSimpleMatchData($dimensionId);
         if (empty($matchConfig->getConditionArr())) {
-            $this->log('不存在配置条件,id:' . $matchConfig->getDimensionName());
+            $this->log('設定条件が存在しません,id:' . $matchConfig->getDimensionName());
             return $matchResult;
         }
-        //对配置分组
+        //設定をグループ化
         $group = [];
         /** @var MatchConditionDataDto $condition */
         foreach ($matchConfig->getConditionArr() as $matchConditionDto) {
             $condition = Condition::fromDto($matchConditionDto);
             $group[$condition->getConditionGroup()][] = $condition;
         }
-        //构建匹配器开始匹配
+        //マッチャーを構築してマッチング開始
         $hit = Condition::matchAnyGroup($conditionData, $group);
         $matchResult->setIsHit($hit);
         return $matchResult;
@@ -48,7 +48,7 @@ class DimensionMatchBusinessService
 
 
     /**
-     * 单条规则匹配数据构建
+     * 単一ルールマッチングデータ構築
      * @param bool $useCache
      * @return MatchDataDto
      */
@@ -71,12 +71,12 @@ class DimensionMatchBusinessService
     {
         $dimensionDtoArr = $this->configService->getDtoByIds([$dimensionId]);
         if (empty($dimensionDtoArr)) {
-            $this->log('构建单条规则匹配数据失败，未找到维度信息', ['dimensionId' => $dimensionId]);
+            $this->log('単一ルールマッチングデータ構築に失敗しました、ディメンション情報が見つかりません', ['dimensionId' => $dimensionId]);
             return MatchDataDto::emptyData();
         }
         $conditionValueResMap = $this->conditionService->getResMapByDimensionIds([$dimensionId]);
         if (empty($conditionValueResMap)) {
-            $this->log('构建单条规则匹配数据失败，未找到维度条件信息', ['dimensionId' => $dimensionId]);
+            $this->log('単一ルールマッチングデータ構築に失敗しました、ディメンション条件情報が見つかりません', ['dimensionId' => $dimensionId]);
             return MatchDataDto::emptyData();
         }
         return MatchDataDto::convert($dimensionDtoArr[0], $conditionValueResMap[$dimensionId]);

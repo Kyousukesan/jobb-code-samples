@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * Category Submission Task主表
+ * カテゴリ提出タスクメインテーブル
  * </p>
  *
  * @author zhoujiwei
@@ -21,69 +21,69 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("module_category_audit_task")
-@ApiModel(value="CategoryAuditTaskEntity对象", description="Category Submission Task主表")
+@ApiModel(value="CategoryAuditTaskEntity对象", description="カテゴリ提出タスクメインテーブル")
 public class CategoryAuditTaskEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "主键")
+    @ApiModelProperty(value = "主キー")
       @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "自生成唯一任务编号")
+    @ApiModelProperty(value = "自動生成ユニークタスク番号")
     private String taskSn;
 
-    @ApiModelProperty(value = "来源系统 SPMP/GPC")
+    @ApiModelProperty(value = "ソースシステム SPMP/GPC")
     private String sourceSystem;
 
-    @ApiModelProperty(value = "OA 任务id")
+    @ApiModelProperty(value = "OA タスクID")
     private Long requestId;
 
-    @ApiModelProperty(value = "绑定的顶级分类ID")
+    @ApiModelProperty(value = "バインドされたトップカテゴリID")
     private Long topCategoryId;
 
-    @ApiModelProperty(value = "状态 0-已接收待提报，1-已提报待审核，2-已审核已更新成功，3-已审核已驳回")
+    @ApiModelProperty(value = "状態 0-受信済み提出待ち、1-提出済み審査待ち、2-審査済み更新成功、3-審査済み却下")
     private Integer taskState;
 
-    @ApiModelProperty(value = "审批时间")
+    @ApiModelProperty(value = "審査時間")
     private Date auditTime;
 
-    @ApiModelProperty(value = "提报时间")
+    @ApiModelProperty(value = "提出時間")
     private Date requestTime;
 
-    @ApiModelProperty(value = "申请时间")
+    @ApiModelProperty(value = "申請時間")
     private Date applicantTime;
 
-    @ApiModelProperty(value = "启用时间")
+    @ApiModelProperty(value = "有効化時間")
     private Date enableTime;
 
-    @ApiModelProperty(value = "提报人")
+    @ApiModelProperty(value = "提出者")
     private String requestName;
 
-    @ApiModelProperty(value = "审批人")
+    @ApiModelProperty(value = "審査者")
     private String auditName;
 
-    @ApiModelProperty(value = "申请人")
+    @ApiModelProperty(value = "申請者")
     private String applicantName;
 
-    @ApiModelProperty(value = "提报原因说明")
+    @ApiModelProperty(value = "提出理由説明")
     private String requestRemark;
 
-    @ApiModelProperty(value = "审批备注说明")
+    @ApiModelProperty(value = "審査備考説明")
     private String auditRemark;
 
-    @ApiModelProperty(value = "申请说明")
+    @ApiModelProperty(value = "申請説明")
     private String applicantRemark;
 
-    @ApiModelProperty(value = "记录插入时间")
+    @ApiModelProperty(value = "レコード挿入時間")
     private Date insertTime;
 
-    @ApiModelProperty(value = "记录更新时间")
+    @ApiModelProperty(value = "レコード更新時間")
     private Date lastUpdateTime;
 
-    @ApiModelProperty(value = "是否删除(0:未删除,1:已删除)")
+    @ApiModelProperty(value = "削除フラグ(0:未削除,1:削除済み)")
     private Integer isDel;
 
-    @ApiModelProperty(value = "审批版本")
+    @ApiModelProperty(value = "審査バージョン")
     private Integer auditVersion;
 }

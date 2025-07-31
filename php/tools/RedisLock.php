@@ -7,7 +7,7 @@ use support\Redis;
 class RedisLock
 {
 
-    // 加锁
+    // ロック取得
     public static function acquire($key, $value, $expire = 10): bool {
         if (Redis::setnx($key, $value)) {
             Redis::expire($key, $expire);
@@ -16,19 +16,19 @@ class RedisLock
         return false;
     }
 
-    // 自旋锁
+    // スピンロック
     public static function acquireBlocking($key, $value, $expire = 10, $timeout = 5): bool {
         $start = time();
         while ((time() - $start) < $timeout) {
             if (self::acquire($key, $value, $expire)) {
                 return true;
             }
-            usleep(100000); // 等待100ms重试
+            usleep(100000); // 100ms待機してリトライ
         }
         return false;
     }
 
-    // 释放锁
+    // ロック解放
     public static function release($key, $value): bool {
         $lua = '
             if redis.call("GET", KEYS[1]) == ARGV[1] then
@@ -39,7 +39,7 @@ class RedisLock
         return Redis::eval($lua, 1, $key, $value);
     }
 
-    //强制释放
+    // 強制解放
     public static function forceRelease($key): bool {
         return Redis::del($key) > 0;
     }

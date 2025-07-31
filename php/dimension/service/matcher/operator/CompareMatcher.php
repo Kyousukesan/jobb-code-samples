@@ -32,7 +32,7 @@ class CompareMatcher implements MatcherInterface
                     $result = $isLte ? ((string)$actual <= (string)$exp) : ((string)$actual >= (string)$exp);
                     break;
                 default:
-                    // 其他类型暂不支持
+                    // その他のタイプは現在サポートされていません
             }
             if ($result) {
                 return true;

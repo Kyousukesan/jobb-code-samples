@@ -27,7 +27,7 @@ class SimpleStorageService
     }
 
     /**
-     * 执行保存数据
+     * データ保存を実行
      * @param string $name
      * @param array|null $params
      * @return void
@@ -67,7 +67,7 @@ class SimpleStorageService
     }
 
     /**
-     * 提取属性值
+     * 属性値を抽出
      * @param StorageArrangeInterface $storageArrange
      * @param array $params
      * @return array
@@ -75,10 +75,10 @@ class SimpleStorageService
     private function searchByParam(StorageArrangeInterface $storageArrange, array $params): array
     {
         $data = [];
-        //提取数据
+        //データを抽出
         foreach ($storageArrange->attributes() as $attribute) {
             $value = $this->getSearchRuntime($storageArrange->useCache())($attribute->getExpression(), $params);
-            //after func
+            //後処理関数
             if (!empty($attribute->getAfterHandler()) && $attribute->getAfterHandler()[0] !== null) {
                 $value = call_user_func($attribute->getAfterHandler()[0], $value);
             }

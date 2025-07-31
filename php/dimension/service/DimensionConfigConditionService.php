@@ -36,19 +36,19 @@ class DimensionConfigConditionService
      */
     public function batchSave(int $dimensionId, array $conditionValueReqList): void
     {
-        //删除旧数据
+        //古いデータを削除
        $this->deleteByDimensionIds([$dimensionId]);
 
-       //校验新数据是否存在重复
+       //新しいデータに重複があるかチェック
         $unqName = [];
         /** @var DimensionConfigConditionReqVo$conditionValueReq */
         foreach ($conditionValueReqList as $conditionValueReq) {
             if (isset($unqName[$conditionValueReq->getConditionGroup()][$conditionValueReq->getConditionName()])) {
-                throw_business_exception('条件名称不能重复:' . $conditionValueReq->getConditionName());
+                throw_business_exception('条件名は重複できません:' . $conditionValueReq->getConditionName());
             }
             $unqName[$conditionValueReq->getConditionGroup()][$conditionValueReq->getConditionName()] = 1;
         }
-        //保存新数据
+        //新しいデータを保存
         /** @var DimensionConfigConditionReqVo $conditionValueReq */
         foreach ($conditionValueReqList as $conditionValueReq) {
             $conditionValueReq->validation();
@@ -108,7 +108,7 @@ class DimensionConfigConditionService
 
     public function deleteByDimensionIds(array $dimensionIds): void
     {
-        //删除旧数据
+        //古いデータを削除
         $conditionIds = $this->conditionModel->getIdsByDimensionIds($dimensionIds);
         if (!empty($conditionIds)) {
             $this->conditionValueModel->deleteByConditionIds($conditionIds);

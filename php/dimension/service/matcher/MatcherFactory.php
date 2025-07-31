@@ -19,7 +19,7 @@ class MatcherFactory
             ConditionLogicEnum::NEQ => new EqualMatcher(ConditionLogicEnum::NEQ),
             ConditionLogicEnum::GTE => new CompareMatcher(ConditionLogicEnum::GTE),
             ConditionLogicEnum::LTE => new CompareMatcher(ConditionLogicEnum::LTE),
-            default => throw new \Exception('不支持的逻辑运算符'),
+            default => throw new \Exception('サポートされていない論理演算子'),
         };
     }
 }

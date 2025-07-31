@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * Category Submission Task启用任务
+ * カテゴリ提出タスク有効化タスク
  * </p>
  *
  * @author zhoujiwei
@@ -21,37 +21,37 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("module_category_audit_task_time")
-@ApiModel(value="CategoryAuditTaskTimeEntity对象", description="Category Submission Task启用任务")
+@ApiModel(value="CategoryAuditTaskTimeEntity对象", description="カテゴリ提出タスク有効化タスク")
 public class CategoryAuditTaskTimeEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "主键")
+    @ApiModelProperty(value = "主キー")
       @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "任务主表")
+    @ApiModelProperty(value = "タスクメインテーブル")
     private Long categoryAuditTaskId;
 
-    @ApiModelProperty(value = "分类唯一标识 父id-备注名")
+    @ApiModelProperty(value = "カテゴリユニーク識別子 親ID-備考名")
     private String categoryKey;
 
-    @ApiModelProperty(value = "启用的分类id")
+    @ApiModelProperty(value = "有効化されたカテゴリID")
     private Long categoryId;
 
-    @ApiModelProperty(value = "0未启用1待执行2执行完毕")
+    @ApiModelProperty(value = "0未有効化1実行待ち2実行完了")
     private Integer taskState;
 
-    @ApiModelProperty(value = "启用时间")
+    @ApiModelProperty(value = "有効化時間")
     private Date enableTime;
 
-    @ApiModelProperty(value = "记录插入时间")
+    @ApiModelProperty(value = "レコード挿入時間")
     private Date insertTime;
 
-    @ApiModelProperty(value = "记录更新时间")
+    @ApiModelProperty(value = "レコード更新時間")
     private Date lastUpdateTime;
 
-    @ApiModelProperty(value = "是否删除(0:未删除,1:已删除)")
+    @ApiModelProperty(value = "削除フラグ(0:未削除,1:削除済み)")
     private Integer isDel;
 
 

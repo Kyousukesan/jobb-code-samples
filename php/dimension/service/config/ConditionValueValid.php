@@ -27,7 +27,7 @@ class ConditionValueValid implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!$this->checkValueType()) {
-            $fail("{$attribute} 的格式不正确");
+            $fail("{$attribute} の形式が正しくありません");
         }
     }
 

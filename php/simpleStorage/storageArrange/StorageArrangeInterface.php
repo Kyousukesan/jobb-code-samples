@@ -8,38 +8,38 @@ interface StorageArrangeInterface
 {
 
     /**
-     * 落表的链接名
+     * データベース接続名
      * @return string
      */
     public function getConnection(): string;
 
     /**
-     * 落表的表名
+     * データベーステーブル名
      * @return string
      */
     public function getTable(): string;
 
     /**
-     * 是否为数组批量保存，如果是则获取区分表达式，否则为空
+     * 配列の一括保存かどうか、配列の場合は分割式を取得、そうでなければ空
      * @return string
      */
     public function getArrayExpression(): string;
 
 
     /**
-     * 获取唯一键属性名，如果不为空，则会覆盖这些属性名交集的数据
+     * ユニークキー属性名を取得、空でない場合はこれらの属性名の交差するデータを上書き
      * @return array<string>
      */
     public function getUniqueFields(): array;
 
     /**
-     * 获取属性提取配置
+     * 属性抽出設定を取得
      * @return array<AttributeArrange>
      */
     function attributes(): array;
 
     /**
-     * 是否使用缓存解析器
+     * キャッシュパーサーを使用するかどうか
      * @return mixed
      */
     function useCache(): bool;

@@ -7,16 +7,16 @@ use app\common\simpleStorage\AttributeArrange;
 class AppThirdReportLogStorage implements StorageArrangeInterface
 {
     /**
-     * 字段映射配置
+     * フィールドマッピング設定
      * @return array|AttributeArrange[]
      */
     function attributes(): array
     {
         return AttributeArrange::makeByArray([
-            'user_id' => [//入参字段名
-                'expression' => 'user_id',//jmespath表达式
-                'tableAlias' => '',//数据表里的字段别名，有则使用，否则使用如key
-                'afterHandler' => null//提取参数后执行的闭包函数
+            'user_id' => [//入力パラメータフィールド名
+                'expression' => 'user_id',//jmespath式
+                'tableAlias' => '',//データテーブルのフィールドエイリアス、あれば使用、なければkeyを使用
+                'afterHandler' => null//パラメータ抽出後に実行するクロージャ関数
             ],
             'event_name' => [
                 'expression' => 'event',
@@ -34,7 +34,7 @@ class AppThirdReportLogStorage implements StorageArrangeInterface
     }
 
     /**
-     * 指定DB连接
+     * DB接続を指定
      * @return string
      */
     public function getConnection(): string
@@ -43,7 +43,7 @@ class AppThirdReportLogStorage implements StorageArrangeInterface
     }
 
     /**
-     * 表名
+     * テーブル名
      * @return string
      */
     public function getTable(): string
@@ -52,7 +52,7 @@ class AppThirdReportLogStorage implements StorageArrangeInterface
     }
 
     /**
-     * 是否为批量保存，如果为批量保存则设置分割表达式
+     * 一括保存かどうか、一括保存の場合は分割式を設定
      * @return string
      */
     public function getArrayExpression(): string
@@ -61,7 +61,7 @@ class AppThirdReportLogStorage implements StorageArrangeInterface
     }
 
     /**
-     * 根据表唯一索引覆盖
+     * テーブルのユニークインデックスに基づいて上書き
      * @return string[]
      */
     public function getUniqueFields(): array
@@ -70,7 +70,7 @@ class AppThirdReportLogStorage implements StorageArrangeInterface
     }
 
     /**
-     * 是否开始表达式解析缓存
+     * 式解析キャッシュを有効にするかどうか
      * @return bool
      */
     function useCache(): bool

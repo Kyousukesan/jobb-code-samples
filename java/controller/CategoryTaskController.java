@@ -72,7 +72,6 @@ public class CategoryTaskController implements CategoryReviewTaskApi {
         return Response.buildSuccessInfo(resp);
     }
 
-    @UlpAuthorityCheck
     @Override
     public Response submitChangeCategoryInfo(SubmitCategoryInfoDataReq req) {
         businessService.submitChangeCategoryInfo(req);
@@ -119,7 +118,6 @@ public class CategoryTaskController implements CategoryReviewTaskApi {
         return Response.buildSuccessResult(respList, respList.size());
     }
 
-    @UlpAuthorityCheck
     @Override
     public Response saveCategoryReviewReference(CategoryReviewReferenceSaveReq req) {
         businessService.saveCategoryReviewReference(req);
@@ -166,7 +164,6 @@ public class CategoryTaskController implements CategoryReviewTaskApi {
         return Response.buildSuccess();
     }
 
-    @UlpAuthorityCheck
     @Override
     public Response<Void> reviewCancel(TaskFinalCheckReq req) {
         businessService.reviewCancel(req);

@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * Category Submission Task版本数据表
+ * カテゴリ提出タスクバージョンデータテーブル
  * </p>
  *
  * @author zhoujiwei
@@ -21,31 +21,31 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("module_category_audit_task_reference")
-@ApiModel(value="CategoryAuditTaskReferenceEntity对象", description="Category Submission Task版本数据表")
+@ApiModel(value="CategoryAuditTaskReferenceEntity对象", description="カテゴリ提出タスクバージョンデータテーブル")
 public class CategoryAuditTaskReferenceEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "主键")
+    @ApiModelProperty(value = "主キー")
       @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "任务主表")
+    @ApiModelProperty(value = "タスクメインテーブル")
     private Long categoryAuditTaskId;
 
-    @ApiModelProperty(value = "版本号")
+    @ApiModelProperty(value = "バージョン番号")
     private Integer version;
 
-    @ApiModelProperty(value = "关联审批参考数据")
+    @ApiModelProperty(value = "関連審査参考データ")
     private String referenceData;
 
-    @ApiModelProperty(value = "记录插入时间")
+    @ApiModelProperty(value = "レコード挿入時間")
     private Date insertTime;
 
-    @ApiModelProperty(value = "记录更新时间")
+    @ApiModelProperty(value = "レコード更新時間")
     private Date lastUpdateTime;
 
-    @ApiModelProperty(value = "是否删除(0:未删除,1:已删除)")
+    @ApiModelProperty(value = "削除フラグ(0:未削除,1:削除済み)")
     private Integer isDel;
 
 

@@ -22,7 +22,7 @@ class AttributeArrange
 
 
     /**
-     * 数组创建
+     * 配列作成
      * @param array $array
      * @return array
      */

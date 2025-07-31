@@ -27,7 +27,7 @@ class DimensionConfigBusinessService
 
 
     /**
-     * 保存数据 带主键则为更新
+     * データを保存 主キーがある場合は更新
      * @param DimensionConfigReqVo $reqVo
      * @return int
      * @throws \Throwable
@@ -41,8 +41,8 @@ class DimensionConfigBusinessService
             $dimensionId = $this->configService->saveInfo($reqVo);
             $this->conditionService->batchSave($dimensionId, $reqVo->getConditionArr());
             $conn->afterCommit(function () use ($dimensionId) {
-                //清理缓存
-                CacheKeyEnum::DIMENSION_CONFIG_MATCH_DATA->newInstance($dimensionId)->delete();
+                        //キャッシュをクリア
+        CacheKeyEnum::DIMENSION_CONFIG_MATCH_DATA->newInstance($dimensionId)->delete();
             });
             return $dimensionId;
         });
@@ -57,7 +57,7 @@ class DimensionConfigBusinessService
     {
         $dimensionResMap = $this->configService->getResMapByIds($dimensionIds);
         $conditionResMap = $this->conditionService->getResMapByDimensionIds($dimensionIds);
-        //组装Res
+        //Resを組み立て
         foreach ($dimensionResMap as $id => $dimensionRes) {
             if (isset($conditionResMap[$id])) {
                 $dimensionRes->setConditionArr($conditionResMap[$id]);
@@ -70,7 +70,7 @@ class DimensionConfigBusinessService
     {
         $dimensionConfigResVoMap = $this->getInfoMapByIds([$dimensionId]);
         if (empty($dimensionConfigResVoMap)) {
-            throw_business_exception('未找到有效的维度数据,id=' . $dimensionId);
+            throw_business_exception('有効なディメンションデータが見つかりません,id=' . $dimensionId);
         }
         return $dimensionConfigResVoMap[$dimensionId];
     }
@@ -92,7 +92,7 @@ class DimensionConfigBusinessService
     }
 
     /**
-     * 删除配置
+     * 設定を削除
      * @param int $dimensionId
      * @return void
      * @throws \Throwable
@@ -124,7 +124,7 @@ class DimensionConfigBusinessService
         }
         $arr = $this->conditionService->getMapByDimensionIds([$dimensionId]);
         if (empty($arr)) {
-            throw_business_exception('未找到有效的维度数据,id=' . $dimensionId);
+            throw_business_exception('有効なディメンションデータが見つかりません,id=' . $dimensionId);
         }
         $this->configService->changeIsEnable($dimensionId, $isEnable);
     }

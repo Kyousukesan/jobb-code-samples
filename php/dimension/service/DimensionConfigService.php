@@ -28,22 +28,22 @@ class DimensionConfigService
     public function saveInfo(DimensionConfigReqVo $reqVo): int
     {
         $reqVo->validation();
-        //校验名称
+        //名前をチェック
         $isRepeat = $this->dimensionConfigModel->checkNameRepeat($reqVo->getDimensionName(), $reqVo->getType(), $reqVo->getId());
         if ($isRepeat) {
-            throw_business_exception('名称不能重复');
+            throw_business_exception('名前は重複できません');
         }
 
         $id = 0;
         if (!empty($reqVo->getId())) {
-            //更新
+            //更新する
             $old = $this->dimensionConfigModel->getById($reqVo->getId());
             $old->setDimensionName($reqVo->getDimensionName());
             $old->setIsEnable($reqVo->getIsEnable());
             $old->setUpdatedAt(Carbon::now()->toDateTimeString());
             $id = $this->dimensionConfigModel->saveInfo($old);
         } else {
-            //新增
+            //新規追加
             $dto = DimensionConfigDto::convertByReq($reqVo);
             $id = $this->dimensionConfigModel->saveInfo($dto);
         }

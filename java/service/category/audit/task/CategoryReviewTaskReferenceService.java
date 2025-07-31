@@ -1,9 +1,9 @@
-package cn.dotfashion.soa.module.service.category.audit.task;
+package cn.company.soa.module.service.category.audit.task;
 
-import cn.dotfashion.soa.module.dto.category.audit.task.CategoryAuditReferenceDto;
-import cn.dotfashion.soa.module.entity.CategoryAuditTaskReferenceEntity;
-import cn.dotfashion.soa.module.vo.categorytask.request.CategoryAuditReferenceSaveReq;
-import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.company.soa.module.dto.category.audit.task.CategoryAuditReferenceDto;
+import cn.company.soa.module.entity.CategoryAuditTaskReferenceEntity;
+import cn.company.soa.module.vo.categorytask.request.CategoryAuditReferenceSaveReq;
+import cn.company.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

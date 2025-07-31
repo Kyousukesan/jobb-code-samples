@@ -1,14 +1,14 @@
-package cn.dotfashion.soa.module.task;
+package cn.company.soa.module.task;
 
-import cn.dotfashion.soa.framework.util.DateFormatTools;
-import cn.dotfashion.soa.framework.util.JsonTools;
-import cn.dotfashion.soa.log.LtLogFormat;
-import cn.dotfashion.soa.module.dto.CategoryAuditTaskWechatDto;
-import cn.dotfashion.soa.module.entity.CategoryAuditTaskTimeEntity;
-import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskTimeService;
-import cn.dotfashion.soa.task.embedded.core.SchedulableTask;
-import cn.dotfashion.soa.task.embedded.core.Task;
-import cn.dotfashion.soa.task.embedded.core.TaskParams;
+import cn.company.soa.framework.util.DateFormatTools;
+import cn.company.soa.framework.util.JsonTools;
+import cn.company.soa.log.LtLogFormat;
+import cn.company.soa.module.dto.CategoryAuditTaskWechatDto;
+import cn.company.soa.module.entity.CategoryAuditTaskTimeEntity;
+import cn.company.soa.module.service.category.audit.task.CategoryAuditTaskTimeService;
+import cn.company.soa.task.embedded.core.SchedulableTask;
+import cn.company.soa.task.embedded.core.Task;
+import cn.company.soa.task.embedded.core.TaskParams;
 import com.shein.common.combine.CombineManager;
 import com.shein.common.enums.ModuleTypeEnum;
 import com.shein.common.exception.BusinessAssert;

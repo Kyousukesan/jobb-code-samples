@@ -1,4 +1,4 @@
-package cn.dotfashion.soa.module.dto.category.audit.task;
+package cn.company.soa.module.dto.category.audit.task;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;

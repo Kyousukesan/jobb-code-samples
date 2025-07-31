@@ -1,6 +1,6 @@
-package cn.dotfashion.soa.module.entity;
+package cn.company.soa.module.entity;
 
-import cn.dotfashion.soa.module.dto.category.audit.task.CategoryTreeVersionDto;
+import cn.company.soa.module.dto.category.audit.task.CategoryTreeVersionDto;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 

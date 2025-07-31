@@ -1,14 +1,14 @@
-package cn.dotfashion.soa.module.service.category.audit.task.impl;
+package cn.company.soa.module.service.category.audit.task.impl;
 
-import cn.dotfashion.soa.framework.util.ExceptionTools;
-import cn.dotfashion.soa.framework.util.JsonTools;
-import cn.dotfashion.soa.module.enums.FileImportType;
-import cn.dotfashion.soa.module.service.AsyncBatchTaskService;
-import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskBusinessService;
-import cn.dotfashion.soa.module.ubpm.handler.AbstractUbpmWorkflowCallBackHandler;
-import cn.dotfashion.soa.module.util.HttpRequestTools;
-import cn.dotfashion.soa.ubpmSdk.entity.UbpmWorkflowData;
-import cn.dotfashion.soa.ubpmSdk.entity.enums.WorkflowStatusEnums;
+import cn.company.soa.framework.util.ExceptionTools;
+import cn.company.soa.framework.util.JsonTools;
+import cn.company.soa.module.enums.FileImportType;
+import cn.company.soa.module.service.AsyncBatchTaskService;
+import cn.company.soa.module.service.category.audit.task.CategoryAuditTaskBusinessService;
+import cn.company.soa.module.ubpm.handler.AbstractUbpmWorkflowCallBackHandler;
+import cn.company.soa.module.util.HttpRequestTools;
+import cn.company.soa.ubpmSdk.entity.UbpmWorkflowData;
+import cn.company.soa.ubpmSdk.entity.enums.WorkflowStatusEnums;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Objects;
 
-import static cn.dotfashion.soa.module.enums.UbpmCallBackHandlerCodeEnum.CATEGORY_AUDIT_TASK;
+import static cn.company.soa.module.enums.UbpmCallBackHandlerCodeEnum.CATEGORY_AUDIT_TASK;
 
 /**
  * 接收回执

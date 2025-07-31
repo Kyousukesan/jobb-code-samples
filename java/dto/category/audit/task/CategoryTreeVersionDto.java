@@ -1,7 +1,7 @@
 package java.dto.category.audit.task;
 
-import cn.dotfashion.soa.module.enums.category.audit.ChangeTagEnum;
-import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.company.soa.module.enums.category.audit.ChangeTagEnum;
+import cn.company.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.apache.commons.collections4.CollectionUtils;

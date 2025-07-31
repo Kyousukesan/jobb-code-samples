@@ -1,6 +1,6 @@
-package cn.dotfashion.soa.module.service.category.audit.task;
+package cn.company.soa.module.service.category.audit.task;
 
-import cn.dotfashion.soa.module.enums.category.audit.TaskStateEnum;
+import cn.company.soa.module.enums.category.audit.TaskStateEnum;
 
 import java.util.Date;
 import java.util.List;

@@ -1,15 +1,15 @@
-package cn.dotfashion.soa.module.service.category.audit.task;
+package cn.company.soa.module.service.category.audit.task;
 
-import cn.dotfashion.soa.module.client.vo.resp.BatchSaveCategoryControlDetailResp;
-import cn.dotfashion.soa.module.dto.category.audit.task.CategoryDiffChangeDto;
-import cn.dotfashion.soa.module.dto.category.audit.task.CategoryTreeVersionDto;
-import cn.dotfashion.soa.module.entity.CategoryAuditTaskEntity;
-import cn.dotfashion.soa.module.entity.CategoryAuditTaskVersionEntity;
-import cn.dotfashion.soa.module.enums.category.audit.CategoryAuditTaskStepEnum;
-import cn.dotfashion.soa.module.enums.category.audit.ChangeTagEnum;
-import cn.dotfashion.soa.module.vo.categorytask.request.CategoryLevelTaskSubReq;
-import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
-import cn.dotfashion.soa.module.vo.categorytask.response.CategoryLevelTaskGetResp;
+import cn.company.soa.module.client.vo.resp.BatchSaveCategoryControlDetailResp;
+import cn.company.soa.module.dto.category.audit.task.CategoryDiffChangeDto;
+import cn.company.soa.module.dto.category.audit.task.CategoryTreeVersionDto;
+import cn.company.soa.module.entity.CategoryAuditTaskEntity;
+import cn.company.soa.module.entity.CategoryAuditTaskVersionEntity;
+import cn.company.soa.module.enums.category.audit.CategoryAuditTaskStepEnum;
+import cn.company.soa.module.enums.category.audit.ChangeTagEnum;
+import cn.company.soa.module.vo.categorytask.request.CategoryLevelTaskSubReq;
+import cn.company.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.company.soa.module.vo.categorytask.response.CategoryLevelTaskGetResp;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

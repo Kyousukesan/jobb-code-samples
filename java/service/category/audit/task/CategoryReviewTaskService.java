@@ -1,8 +1,8 @@
-package cn.dotfashion.soa.module.service.category.audit.task;
+package cn.company.soa.module.service.category.audit.task;
 
-import cn.dotfashion.soa.module.entity.CategoryAuditTaskEntity;
-import cn.dotfashion.soa.module.enums.category.audit.TaskStateEnum;
-import cn.dotfashion.soa.module.vo.categorytask.response.TopCategoryInfoResp;
+import cn.company.soa.module.entity.CategoryAuditTaskEntity;
+import cn.company.soa.module.enums.category.audit.TaskStateEnum;
+import cn.company.soa.module.vo.categorytask.response.TopCategoryInfoResp;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

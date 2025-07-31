@@ -1,13 +1,13 @@
-package cn.dotfashion.soa.module.service.category.audit.task.impl;
+package cn.company.soa.module.service.category.audit.task.impl;
 
-import cn.dotfashion.soa.framework.util.JsonTools;
-import cn.dotfashion.soa.module.dto.category.audit.task.CategoryAuditReferenceDto;
-import cn.dotfashion.soa.module.entity.CategoryAuditTaskReferenceEntity;
-import cn.dotfashion.soa.module.mapper.CategoryAuditTaskReferenceMapper;
-import cn.dotfashion.soa.module.service.category.audit.task.CategoryAuditTaskReferenceService;
-import cn.dotfashion.soa.module.vo.categorytask.request.CategoryAuditReferenceSaveReq;
-import cn.dotfashion.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
-import cn.dotfashion.soa.module.vo.request.document.SizeInfoModule;
+import cn.company.soa.framework.util.JsonTools;
+import cn.company.soa.module.dto.category.audit.task.CategoryAuditReferenceDto;
+import cn.company.soa.module.entity.CategoryAuditTaskReferenceEntity;
+import cn.company.soa.module.mapper.CategoryAuditTaskReferenceMapper;
+import cn.company.soa.module.service.category.audit.task.CategoryAuditTaskReferenceService;
+import cn.company.soa.module.vo.categorytask.request.CategoryAuditReferenceSaveReq;
+import cn.company.soa.module.vo.categorytask.request.SubmitCategoryInfoDataReq;
+import cn.company.soa.module.vo.request.document.SizeInfoModule;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.commons.collections4.CollectionUtils;

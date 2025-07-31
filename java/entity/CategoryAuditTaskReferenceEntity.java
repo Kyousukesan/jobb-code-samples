@@ -1,4 +1,4 @@
-package cn.dotfashion.soa.module.entity;
+package cn.company.soa.module.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;

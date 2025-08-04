@@ -1,0 +1,12 @@
+[
+  {
+    "stream_name": "abcstream:app_queue_redis_UserLoginStream",
+    "group_name": "book_similarity_group",
+    "consumer_id": "consumer_1",
+    "auto_start": true,
+    "enabled": true,
+    "max_retries": 3,
+    "batch_size": 10,
+    "timeout": 30
+  }
+] 
